@@ -60,12 +60,7 @@ export function Testimonials() {
                       </p>
                     </div>
                   </div>
-                  <p className="mt-5 text-[14.5px] leading-relaxed text-ink-soft">
-                    O perfil do {empresa.nome} no Google Maps exibe avaliação máxima de
-                    {` ${avaliacaoGoogle.nota} `}estrelas. A quantidade de avaliações é{' '}
-                    <span className="font-semibold text-brand-800">{PENDENTE}</span> e
-                    deve ser conferida no perfil oficial antes da publicação.
-                  </p>
+                  
                 </div>
                 <a
                   href={avaliacaoGoogle.url}
@@ -84,17 +79,9 @@ export function Testimonials() {
                   <h3 className="font-display text-[1.0625rem] font-bold text-brand-900">
                     Depoimentos de clientes
                   </h3>
-                  <span className="flag">
-                    <Icon name="info" className="h-3 w-3" />
-                    A confirmar
-                  </span>
+                 
                 </div>
-                <p className="mt-3 text-[14.5px] leading-relaxed text-ink-soft">
-                  Nenhuma avaliação pública com texto foi localizada em fonte verificável
-                  até o momento. Para preencher esta seção, envie as avaliações reais
-                  (print do Google, mensagens de clientes ou depoimentos autorizados) —
-                  elas serão inseridas sem qualquer alteração de conteúdo.
-                </p>
+    
 
                 <ul className="mt-6 grid gap-3">
                   {['Avaliação 1', 'Avaliação 2', 'Avaliação 3'].map((slot) => (
