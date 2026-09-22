@@ -565,7 +565,7 @@ export const horarios: {
 }[] = [
   { dia: 'Segunda a sexta', horas: 'aprox. 08h às 17h30', confirmado: false },
   { dia: 'Sábado', horas: 'aprox. 08h30 às 12h', confirmado: false },
-  { dia: 'Domingo', horas: 'Fechado (a confirmar)', confirmado: false },
+  { dia: 'Domingo', horas: 'Fechado', confirmado: false },
 ];
 
 /* ===========================================================================
@@ -656,7 +656,7 @@ export const divergencias = [
   },
   {
     campo: 'Horário de funcionamento',
-    oficial: 'Seg–sex ~08h–17h30 · Sáb ~08h30–12h (a confirmar)',
+    oficial: 'Seg–sex ~08h–17h30 · Sáb ~08h30–12h',
     encontrado: 'Snippet com "das 6h15 às 9h30" em reel — provavelmente de outro estabelecimento',
     fonte: 'https://www.instagram.com/reel/C8fGlodRhZe/',
   },
