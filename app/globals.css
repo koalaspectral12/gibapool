@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial,
+      sans-serif;
+    --font-display: var(--font-sans);
+    --header-h: 76px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* compensa o header sticky ao navegar por âncoras */
+    scroll-padding-top: calc(var(--header-h) + 16px);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-extrabold tracking-tight text-brand-900;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-brand-500/20;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1200px] px-5 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em];
+  }
+
+  .h1 {
+    @apply font-display text-[2.1rem] font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.6rem];
+  }
+
+  .h2 {
+    @apply font-display text-[1.75rem] font-extrabold leading-[1.12] tracking-tight sm:text-4xl lg:text-[2.6rem];
+  }
+
+  .h3 {
+    @apply font-display text-lg font-bold leading-snug sm:text-xl;
+  }
+
+  .lead {
+    @apply text-[1.0625rem] leading-relaxed text-ink-soft sm:text-lg;
+  }
+
+  /* Botões ------------------------------------------------------------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full text-[0.9375rem] font-semibold
+      transition-all duration-200 focus-visible:outline-none focus-visible:ring-4
+      focus-visible:ring-brand-500/25 disabled:pointer-events-none disabled:opacity-60;
+  }
+
+  .btn-lg {
+    @apply h-14 px-7 text-base;
+  }
+
+  .btn-md {
+    @apply h-12 px-6;
+  }
+
+  .btn-sm {
+    @apply h-10 px-4 text-sm;
+  }
+
+  .btn-primary {
+    @apply bg-cta-grad text-white shadow-glow hover:-translate-y-0.5 hover:shadow-lift;
+  }
+
+  .btn-whats {
+    @apply bg-[#25D366] text-[#04310F] shadow-[0_16px_34px_-16px_rgba(37,211,102,.75)]
+      hover:-translate-y-0.5 hover:bg-[#1FBE5B];
+  }
+
+  .btn-solid {
+    @apply bg-brand-900 text-white hover:-translate-y-0.5 hover:bg-brand-800 hover:shadow-lift;
+  }
+
+  .btn-ghost {
+    @apply border border-white/25 bg-white/10 text-white backdrop-blur-md hover:border-white/50 hover:bg-white/20;
+  }
+
+  .btn-outline {
+    @apply border border-brand-200 bg-white text-brand-800 hover:border-brand-400 hover:bg-brand-50;
+  }
+
+  .btn-link {
+    @apply inline-flex items-center gap-2 text-sm font-bold text-brand-600 transition-colors hover:text-brand-800;
+  }
+
+  /* Superfícies -------------------------------------------------------- */
+  .card {
+    @apply rounded-3xl border border-sand-line bg-white shadow-soft;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-brand-200 hover:shadow-card;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-sand-line bg-white px-3.5 py-2
+      text-[13px] font-semibold text-ink-soft transition-all duration-200;
+  }
+
+  .chip-active {
+    @apply border-brand-900 bg-brand-900 text-white;
+  }
+
+  /* Selo de informação a confirmar ------------------------------------- */
+  .flag {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-dashed border-amber-400/70
+      bg-amber-50 px-2.5 py-1 text-[10.5px] font-bold uppercase tracking-wide text-amber-700;
+  }
+
+  /* Revelação no scroll ------------------------------------------------ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@layer utilities {
+  .text-gradient-aqua {
+    @apply bg-gradient-to-r from-brand-300 via-aqua to-brand-200 bg-clip-text text-transparent;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
