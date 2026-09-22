@@ -71,19 +71,6 @@ export function Portfolio() {
           </a>
         </div>
 
-        {/* Aviso de conteúdo */}
-        <div className="mt-7 flex items-start gap-3 rounded-2xl border border-dashed border-amber-300 bg-amber-50/70 px-5 py-4">
-          <Icon name="info" className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
-          <p className="text-[13.5px] leading-relaxed text-amber-900">
-            <strong className="font-bold">Fotos reais da Giba Pool.</strong> As imagens
-            com a marcação &ldquo;Foto Giba Pool&rdquo; são registros próprios, enviados
-            pela empresa. As demais permanecem marcadas como &ldquo;Imagem
-            ilustrativa&rdquo; e não representam obras, clientes ou serviços já
-            executados — devem ser substituídas por registros oficiais antes da
-            publicação definitiva.
-          </p>
-        </div>
-
         {/* Filtros */}
         <div className="no-scrollbar mt-8 -mx-5 flex gap-2 overflow-x-auto px-5 pb-1 sm:mx-0 sm:flex-wrap sm:px-0">
           {categoriasPortfolio.map((c) => (
