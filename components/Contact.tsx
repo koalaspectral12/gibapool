@@ -76,10 +76,7 @@ export function Contact() {
                 <div className="w-full">
                   <dt className="flex flex-wrap items-center gap-2.5 text-[12px] font-bold uppercase tracking-wide text-ink-muted">
                     Horário de atendimento
-                    <span className="flag">
-                      <Icon name="info" className="h-3 w-3" />
-                      A confirmar
-                    </span>
+                  
                   </dt>
                   <dd className="mt-2 grid gap-1.5">
                     {horarios.map((h) => (
@@ -92,10 +89,6 @@ export function Contact() {
                       </span>
                     ))}
                   </dd>
-                  <p className="mt-3 text-[13px] leading-relaxed text-ink-muted">
-                    Os horários acima ainda não foram confirmados oficialmente. Consulte
-                    pelo WhatsApp antes de ir à loja.
-                  </p>
                 </div>
               </div>
 
